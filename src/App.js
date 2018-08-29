@@ -64,8 +64,15 @@ class App extends Component {
     componentWillMount() {
         this.unlisten = this.props.history.listen((location, action) => {
             let query = qs.parse(location.search).query;
-            this.props.searchAPi(query);
+            if (query) {
+                this.props.searchAPi(query);
+            }
         });
+
+        let query = qs.parse(this.props.location.search).query;
+        if (query) {
+            this.props.searchAPi(query);
+        }
     }
 
     componentWillUnmount() {
