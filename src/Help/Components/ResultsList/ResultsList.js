@@ -24,10 +24,8 @@ const ListItem = styled.li`
 
 
 
-const isHelpLoading = ({ help }) => {
-    console.log(help, 'helping');
-    return help.loading;
-}
+const isHelpLoading = ({ help }) => help.loading;
+
 
 const withSpinnerWhileLoading = branch(
     isHelpLoading,

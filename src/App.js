@@ -49,7 +49,6 @@ class App extends Component {
 
     handleSubmit = (values, e) => {
         e.preventDefault();
-        console.log(this.props);
         this.props.history.push({
             pathname: '/',
             search: `?query=${values.query}`
