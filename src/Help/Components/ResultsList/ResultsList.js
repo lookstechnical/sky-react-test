@@ -45,7 +45,7 @@ const ResultsListItem = ({page}) =>  (
 const ResultsList = (props) =>  (
     <div>
         <h4>Results for {props.help.query}</h4>
-        <p>{props.help.paginator.page} of {props.help.paginator.total_pages}</p>
+        <p>{props.help.paginator.page + 1} of {props.help.paginator.total_pages}</p>
         <List>
             {props.help.paginator.data.map((page, index) => (
                 <ResultsListItem key={index} page={page}/>
