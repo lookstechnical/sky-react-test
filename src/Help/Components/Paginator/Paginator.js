@@ -21,7 +21,7 @@ const PrevLink = styled.a`
 
 export const Paginator = ({help, updatePage,...props}) => (
     <div>
-        {help.paginator.prev_page >= 0 && (
+        {help.paginator.prev_page >= 0 && help.paginator.prev_page != null && (
             <PrevLink onClick={(e) => updatePage(help.paginator.prev_page)} >Previous page</PrevLink>
         )}
 
