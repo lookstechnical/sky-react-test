@@ -2,7 +2,7 @@ import {SEARCH_API_ERROR, SEARCH_API_REQUEST, SEARCH_API_SUCCESS, SET_PAGE} from
 
 const initialState = {
     paginator: {
-        page:0,
+        page:1,
         per_page:10,
         pre_page: null,
         next_page: null,
@@ -24,9 +24,8 @@ const paginateItems = (items, page, per_page) => {
     return {
         page: page,
         per_page: per_page,
-        prev_page: page - 1 ? page - 1 : null,
+        prev_page: page > 0 ? page - 1 : null,
         next_page: (total_pages > page) ? page + 1 : null,
-        total: items.length,
         total_pages: total_pages,
         data: paginatedItems
     };
